@@ -1,9 +1,11 @@
   var SlackBot = require("slackbots");
   var schedule = require('node-schedule');
+  var express = require("express");
+  var app = express();
   var channel = "test2";
   var port = process.env.PORT || 8080;
 
-  var server=app.listen(port,function() {
+  var server = app.listen(port,function() {
   console.log("app running on port 8080"); });
 
   var bot = new SlackBot({
