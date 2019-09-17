@@ -1,6 +1,10 @@
   var SlackBot = require("slackbots");
   var schedule = require('node-schedule');
   var channel = "test2";
+  var port = process.env.PORT || 8080;
+
+  var server=app.listen(port,function() {
+  console.log("app running on port 8080"); });
 
   var bot = new SlackBot({
       token: 'xoxb-604611695190-762654333568-pL9ZOjjHRfkvqDbFkvOIXK88',
@@ -23,7 +27,7 @@
                 "Wish you were beer!" ];
 
                 //30 16 * * 5
-                var scheduler = schedule.scheduleJob('11 12 * * 2', function(){
+                var scheduler = schedule.scheduleJob('16 11 * * 2', function(){
                   var random = arr[Math.floor(Math.random() * arr.length)];
                   bot.postMessageToChannel(channel, random);
                 });
