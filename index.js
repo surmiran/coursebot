@@ -23,7 +23,7 @@
                 "Wish you were beer!" ];
 
                 //30 16 * * 5
-                var scheduler = schedule.scheduleJob('10 10 * * 2', function(){
+                var scheduler = schedule.scheduleJob('11 12 * * 2', function(){
                   var random = arr[Math.floor(Math.random() * arr.length)];
                   bot.postMessageToChannel(channel, random);
                 });
