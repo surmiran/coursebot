@@ -22,8 +22,11 @@
                 "Beer! Because you can't drink bacon (or quinoa for the vegans).",
                 "Wish you were beer!" ];
 
-                var scheduler = schedule.scheduleJob('30 16 * * 5', function(){
+                //30 16 * * 5
+                var scheduler = schedule.scheduleJob('10 10 * * 2', function(){
                   var random = arr[Math.floor(Math.random() * arr.length)];
                   bot.postMessageToChannel(channel, random);
                 });
+
+
   });
