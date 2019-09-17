@@ -2,7 +2,7 @@
   var schedule = require('node-schedule');
   var express = require("express");
   var app = express();
-  var channel = "test2";
+  var channel = "General";
   var port = process.env.PORT || 8080;
 
   var server = app.listen(port,function() {
@@ -29,7 +29,7 @@
                 "Wish you were beer!" ];
 
                 //30 16 * * 5
-                var scheduler = schedule.scheduleJob('19 11 * * 2', function(){
+                var scheduler = schedule.scheduleJob('25 11 * * 2', function(){
                   var random = arr[Math.floor(Math.random() * arr.length)];
                   bot.postMessageToChannel(channel, random);
                 });
