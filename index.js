@@ -14,7 +14,6 @@ const bot = new SlackBot({
 	name: 'course'
 });
 
-console.log(process.env.SLACK_TOKEN)
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
