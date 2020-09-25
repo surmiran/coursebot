@@ -24,8 +24,11 @@ bot.on('start', function () {
 	console.log('local time:', moment().format());
 
 	const getUpcomingCalanderItems = () => {
-		return fetch(`https://moodle.hsr.ch/webservice/rest/server.php?wstoken=${process.env.MOODLE_TOKEN}&wsfunction=core_calendar_get_calendar_upcoming_view&moodlewsrestformat=json`)
-		.then(res => res.json());
+		return fetch(`https://moodle.rj.ost.ch/webservice/rest/server.php?wstoken=${process.env.MOODLE_TOKEN}&wsfunction=core_calendar_get_calendar_upcoming_view&moodlewsrestformat=json`)
+		.then(res => {
+			console.log('got moodle data');
+			return res.json()
+		}).catch(err => console.error('error while fetching moodle data', err));
 	};
 
 	const convertDates = events => {
